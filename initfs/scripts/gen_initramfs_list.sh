@@ -171,7 +171,7 @@ dir_filelist() {
 	${dep_list}header "$1"
 
 	srcdir=$(echo "$1" | sed -e 's://*:/:g')
-	dirlist=$(find "${srcdir}" | xargs stat -c"%n %a %u %g")
+	dirlist=$(find "${srcdir}" | sort | xargs stat -c"%n %a %u %g")
 
 	# If $dirlist is only one line, then the directory is empty
 	if [  "$(echo "${dirlist}" | wc -l)" -gt 1 ]; then
