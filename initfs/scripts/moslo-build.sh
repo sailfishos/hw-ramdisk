@@ -426,6 +426,6 @@ if [ ! -z $USE_LZ4 ]; then
 	lz4 -f -l -12 --favor-decSpeed $WORK_DIR/rootfs.cpio $WORK_DIR/rootfs.cpio.lz4
 	echo Build is ready at $WORK_DIR/rootfs.cpio.lz4
 else
-	gzip -f  $WORK_DIR/rootfs.cpio
+	gzip -n -f $WORK_DIR/rootfs.cpio
 	echo Build is ready at $WORK_DIR/rootfs.cpio.gz
 fi
